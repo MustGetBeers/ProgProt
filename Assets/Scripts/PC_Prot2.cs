@@ -9,6 +9,7 @@ public class PC_Prot2 : MonoBehaviour
     public float xRange = 10;
     public GameObject projectilePrefab;
     public GameObject spawnManager;
+    public Transform projectileSpawnPoint;
 
 
     void Update()
@@ -42,7 +43,7 @@ public class PC_Prot2 : MonoBehaviour
     public void OnFire()
     {
         // Launch a projectile OnFire button pressed
-        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        Instantiate(projectilePrefab, projectileSpawnPoint.position, projectilePrefab.transform.rotation);
     }
 
     //Not using the jump key to invoke this anymore, but here is how to use a button press to send a message to something else.

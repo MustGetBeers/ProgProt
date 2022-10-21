@@ -19,7 +19,17 @@ public class DetectCollisions : MonoBehaviour
     //If an object with rigidbody collides, it deletes itself then deletes the other thing it colliding with as well.
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        Destroy(other);
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("PLAYER DOWN");
+            Destroy(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+        
     }
 }
